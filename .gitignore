@@ -1,11 +1,8 @@
 env
 main.ipynb
 main.py
-requirements.txt
 storage
 migrations
 instance
 __pycache__
 .env
-paper.pdf
-my_faiss_index
