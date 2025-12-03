@@ -65,7 +65,7 @@ def query_llm(query: str, chat_id: str) -> str:
             })
         return output
 
-    model = ChatGoogleGenerativeAI(model="gemini-2.5-pro")
+    model = ChatGoogleGenerativeAI(model="gemini-2.5-flash")
     agent = create_agent(
         model=model,
         tools=[get_similar_pdf_content],

@@ -31,9 +31,9 @@ def preprocess_pdf(pdf_bytes):
 
 def create_vector_store(pdf, file_name):
     chunks = preprocess_pdf(pdf)
-    # embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
-    embeddings = HuggingFaceEmbeddings(
-        model_name="nomic-ai/nomic-embed-text-v1.5", model_kwargs={'trust_remote_code': True})
+    embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+    # embeddings = HuggingFaceEmbeddings(
+    #     model_name="nomic-ai/nomic-embed-text-v1.5", model_kwargs={'trust_remote_code': True})
     vector_store = FAISS.from_documents(chunks, embeddings)
     storage_path = os.path.join("storage", "vectordb")
     file_path = os.path.join(storage_path, file_name)
@@ -41,4 +41,4 @@ def create_vector_store(pdf, file_name):
 
 
 def load_vector_store(path: str):
-    return FAISS.load_local(path, embeddings=HuggingFaceEmbeddings(model_name="nomic-embed-text-v1.5"), allow_dangerous_deserialization=True)
+    return FAISS.load_local(path, embeddings=HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2"), allow_dangerous_deserialization=True)
