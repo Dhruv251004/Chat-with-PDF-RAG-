@@ -13,8 +13,6 @@ def init_flask_app():
     CORS(app, resources={r"/*": {"origins": "*"}})
     db.init_app(app)
     migrate.init_app(app, db)
-    cors.init_app(app)
-
     # models
     from app.models import Chat, Conversation
 
