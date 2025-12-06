@@ -1,14 +1,15 @@
+--extra-index-url https://download.pytorch.org/whl/cpu
 flask
 python-dotenv
-flask-migrate 
+flask-migrate
 psycopg2-binary
 flask-cors
 langchain
 langchain-text-splitters
-langchain-community 
+langchain-community
 pypdf
 langchain_google_genai
 faiss-cpu
-langchain-huggingface 
+langchain-huggingface
 sentence-transformers
 gunicorn
