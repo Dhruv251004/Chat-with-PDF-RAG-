@@ -23,5 +23,9 @@ def init_flask_app():
     os.makedirs(os.path.join('storage', 'vectordb'), exist_ok=True)
 
     app.register_blueprint(chat_bp, url_prefix='/api/chat')
-
+    
+    # This checks if tables exist. If not, it creates them.
+    with app.app_context():
+        db.create_all()
+        print("✅ Database tables created successfully!")
     return app
